@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>test</title>
+    <style>
+        .header {
+            background: #E22424;
+            text-align: center;
+            padding: 5px;
+            color: white;
+            border-radius: 5px;
+        }
+
+        .menu-style {
+            padding: 20px;
+            margin: 0 30px 0 30px;
+        }
+
+        .input-field {
+            border: 1px solid gray;
+            text-align: center;
+            padding: 20px;
+            margin-top: 10px;
+            border-radius: 5px;
+
+        }
+
+        .input-field input {
+            outline: none;
+            border: 0;
+
+        }
+
+
+
+        .btn {
+            display: flex;
+            justify-content: space-between;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="header">
+        <p><span class="menu-style">Book Name</span>|<span class="menu-style">Code</span>|<span
+                class="menu-style">Writer</span>|<span class="menu-style">Other</span></p>
+    </div>
+
+    <div id="input-field" class="input-field">
+        <div>
+            <input type="text" placeholder="Book Name">|
+            <input type="text" placeholder="Code">|
+            <input type="text" placeholder="Writer Name">|
+            <input type="text" placeholder="Other">
+        </div>
+    </div>
+
+    <div class="btn">
+        <div class="left">
+            <button id="add-more" onclick="addMore()">Add More</button>
+        </div>
+        <div class="right">
+            <button>Add</button>
+            <button>Cancel</button>
+        </div>
+
+
+    </div>
+
+
+
+
+
+    <script>
+        function addMore() {
+
+            const addMore = document.getElementById("add-more")
+            const inputField = document.getElementById("input-field");
+            const addField = document.createElement("div");
+            inputField.style.marginBottom = "20px";
+
+            addField.innerHTML = `<div>
+                <input type="text" placeholder="Book Name">|
+                <input type="text" placeholder="Code">|
+                <input type="text" placeholder="Writer Name">|
+                <input type="text" placeholder="Other">
+            </div>`
+
+            inputField.appendChild(addField);
+
+
+            addMore.add(addField);
+
+        }
+    </script>
+
+</body>
+
+</html>
